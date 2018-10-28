@@ -3,7 +3,6 @@
 <title>Yahoo!!</title>
 </head>
 <body>
-Welcome ${name}<br/>
-Now, you can manage <a href="/list-todos">manage your todos</a>
+Welcome ${name}. You are now authenticated. <a href="/list-todos">Click here</a> to start maintaining your todo's.
 </body>
 </html>
