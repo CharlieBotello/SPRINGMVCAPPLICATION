@@ -1,17 +1,18 @@
 package com.fdmgroup.login;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.fdmgroup.login.LoginService;
-
 @Controller
 public class LoginController {
 
-	LoginService service = new LoginService();
+	// Set the login Service - Auto wiring
+	@Autowired
+	LoginService service;
 	
 	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public String sohwLoginPage() {
