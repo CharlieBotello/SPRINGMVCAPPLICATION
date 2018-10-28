@@ -3,9 +3,12 @@
 <title>BING ROCKS !!</title>
 </head>
 <body>
-Hi ${name}
+Hi ${name} <br/>
 
 Your Todos are
-${todos}
+${todos} <br/>
+
+
+<a class="button" href="/add-todo">Add</a>
 </body>
 </html>
