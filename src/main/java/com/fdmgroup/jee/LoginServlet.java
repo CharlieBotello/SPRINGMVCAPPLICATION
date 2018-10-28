@@ -1,4 +1,4 @@
-package webapp;
+package com.fdmgroup.jee;
 
 import java.io.IOException;
 
