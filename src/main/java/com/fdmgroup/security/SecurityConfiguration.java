@@ -14,7 +14,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Autowired
 	public void configureGlobalSecurity(AuthenticationManagerBuilder auth)
 			throws Exception {
-		auth.inMemoryAuthentication().withUser("fdmLearning").password("dummy")
+		auth.inMemoryAuthentication().withUser("charlie").password("dummy")
 				.roles("USER", "ADMIN");
 	}
 
@@ -25,4 +25,3 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.formLogin();
 	}
 }
-

@@ -4,8 +4,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <html>
 <head>
-<title>Todos for ${name}</title>
+<title>Todos Application</title>
 <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
-    rel="stylesheet">
+	rel="stylesheet">
 </head>
+
 <body>
