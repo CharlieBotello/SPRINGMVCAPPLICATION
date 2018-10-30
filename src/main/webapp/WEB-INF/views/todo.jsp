@@ -1,37 +1,34 @@
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<html>
-<head>
-<title>Your Todo</title>
-<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
-	rel="stylesheet">
-</head>
-<body>
+<%@ include file="common/header.jsp"%>
+<%@ include file="common/navigation.jsp"%>
 
-	<div class="container">
-		<form:form method="post" commandName="todo">
-			<form:hidden path="id"></form:hidden>
-			<form:hidden path="user"></form:hidden>
-			
-			<fieldset class="form-group">
-				<form:label path="desc">Description</form:label>
-				<form:input path="desc" type="text" class="form-control"
-					required="required"/>
-				<form:errors path="desc" cssClass="text-warning" />
-			</fieldset>
-			
-			<fieldset class="form-group">
-				<form:label path="targetDate">Target Date</form:label>
-				<form:input path="targetDate" type="text" class="form-control"
-					required="required"/>
-				<form:errors path="targetDate" cssClass="text-warning" />
-			</fieldset>
-			
-			<button type="submit" class="btn btn-success">Add</button>
-		</form:form>
+<div class="container">
+	<table class="table table-striped">
+		<caption>Your Todos are</caption>
+		<thead>
+			<tr>
+				<th>Description</th>
+				<th>Date</th>
+				<th>Completed</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${todos}" var="todo">
+				<tr>
+					<td>${todo.desc}</td>
+					<td><fmt:formatDate pattern="dd/MM/yyyy"
+							value="${todo.targetDate}" /></td>
+					<td>${todo.done}</td>
+					<td><a type="button" class="btn btn-primary"
+						href="/update-todo?id=${todo.id}">Edit</a> <a type="button"
+						class="btn btn-warning" href="/delete-todo?id=${todo.id}">Delete</a>
+					</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+	<div>
+		<a type="button" class="btn btn-success" href="/add-todo">Add</a>
 	</div>
-
-	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
-	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-</body>
-</html>
+</div>
+<%@ include file="common/footer.jsp"%>
