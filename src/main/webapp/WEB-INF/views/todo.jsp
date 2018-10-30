@@ -32,3 +32,8 @@
 	</div>
 </div>
 <%@ include file="common/footer.jsp"%>
+<script>
+	$('#targetDate').datepicker({
+		format : 'dd/mm/yyyy'
+	});
+</script>
